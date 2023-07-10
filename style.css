@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #fdf5e6
+}
+
+nav {
+    padding: 10px;
+    text-align: center;
+}
+
+nav a, .button {
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    color: black;
+    background-color: #ddffff;
+    padding: 9px 16px;
+    text-decoration: none;
+}
