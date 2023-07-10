@@ -10,11 +10,14 @@ nav {
     text-align: center;
 }
 
-nav a, .button {
-    border: 1px solid lightgray;
-    border-radius: 10px;
+nav button {
     color: black;
     background-color: #ddffff;
+    border: 1px solid lightgray;
+    border-radius: 10px;
     padding: 9px 16px;
-    text-decoration: none;
+    transition: 0.3s;
+}
+nav button:hover {
+    background-color: lightblue;
 }
