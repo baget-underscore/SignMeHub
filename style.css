@@ -61,23 +61,23 @@ button.logout:hover {
     border-bottom: 4px solid red;
 }
 
-div.listHolder {
-    background-color: yellow;
-    height: 80%;
-    margin: 40px
+.grid-container {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-auto-flow: column;
+    grid-template-columns: 49/3% 49/3% 49/3% 49/3% 49/3% 49/3%;
+    grid-template-rows: 200px;
 }
-div.listItem {
+.grid-item {
     background-color: lightgray;
-    width: 20%;
-    height: 250px;
     padding: 5px 20px 5px 20px;
-    margin: 10px;
 }
-div.listItem p {
-    height: 90px;
+.grid-item p {
+    height: 65px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
 }
