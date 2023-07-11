@@ -1,23 +1,47 @@
 * {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     box-sizing: border-box;
 }
 body {
-    background-color: #fdf5e6
+    background-color: whitesmoke;
 }
 
-nav {
-    padding: 10px;
+div.title {
+    border: 1px solid lightgray;
+    margin: 10px 10px;
+    background-color: rgb(204, 209, 209);
+}
+p.title {
+    text-align: center;
+}
+label.title {
     text-align: center;
 }
 
-nav button {
-    color: black;
-    background-color: #ddffff;
-    border: 1px solid lightgray;
-    border-radius: 10px;
-    padding: 9px 16px;
-    transition: 0.3s;
+nav {
+    display: flex;
+    justify-content: space-evenly;
 }
-nav button:hover {
-    background-color: lightblue;
+
+button {
+    background-color: whitesmoke;
+    border: 0px solid rgb(204, 209, 209);
+    padding: 9px 16px;
+    transition: 0.1s;
+}
+button:hover {
+    border-bottom: 4px solid rgb(204, 209, 209);
+}
+button.logout:hover {
+    background-color: lightcoral;
+}
+
+div.login {
+    background-color: rgb(204, 209, 209);
+}
+p.login {
+    color: black;
+}
+input.login {
+    background-color: whitesmoke;
 }
