@@ -2,7 +2,7 @@
 
 <head>
     <title>
-        SignMeHub - Home
+        SignMeHub - Inloggen
     </title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,19 +19,11 @@
         </div>
 
         <div class="login">
-            <form class="w3-container" method="post">
-                <p class="login">      
-                    <label><b>Username</b></label>
-                    <input class="w3-input login" name="username" type="text">
-                </p>
-                <p class="login">
-                    <label><b>Password</b></label>
-                    <input class="w3-input login" name="password" type="text">
-                </p>
-                <p>
-                    <a href="homePage.html"><b><button>Submit</button></b></a>
-                </p>
+            <form method="post">
+                <input class="login" name="username" type="text" placeholder="Gebruikersnaam">
+                <input class="login" name="password" type="password" placeholder="Wachtwoord">
             </form>
+            <a href="homePage.html"><button>Inloggen</button></a>
         </div>
     </div>
 </body>
