@@ -50,15 +50,15 @@ button {
     transition: 0.1s;
 }
 button:hover {
-    border-bottom: 4px solid gray;
+    border-bottom: 5px solid gray;
 }
 button:disabled {
     cursor: not-allowed;
     color: grey;
-    border-bottom: 4px solid lightgray;
+    border-bottom: 5px solid lightgray;
 }
 button.logout:hover {
-    border-bottom: 4px solid red;
+    border-bottom: 5px solid red;
 }
 
 .rooster-container {
