@@ -61,23 +61,41 @@ button.logout:hover {
     border-bottom: 4px solid red;
 }
 
-.grid-container {
+.rooster-container {
     display: grid;
     row-gap: 10px;
     column-gap: 10px;
     grid-auto-flow: column;
-    grid-template-columns: 49/3% 49/3% 49/3% 49/3% 49/3% 49/3%;
-    grid-template-rows: 200px;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-auto-rows: 200px;
 }
-.grid-item {
+.rooster-item, .popular-item {
     background-color: lightgray;
     padding: 5px 20px 5px 20px;
 }
-.grid-item p {
+.rooster-item p, .popular-item p {
     height: 65px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
+}
+
+.popular-container {
+    float: left;
+    max-width: 33%;
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+    grid-template-columns: auto auto;
+    grid-auto-rows: 200px;
+}
+
+.information {
+    background-color: sandybrown;
+    padding: 10px;
+    padding-left: 30px;
+    float: right;
+    max-width: 67%;
 }

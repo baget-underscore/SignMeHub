@@ -33,8 +33,9 @@
     <div style="margin:10px">
 
         <h2>Jouw rooster:</h2>
-        <div class="grid-container">
-            <div class="grid-item">
+        <!-- Edit this to fetch entries from DB using user_id and the workshops they signed up for -->
+        <div class="rooster-container">
+            <div class="rooster-item">
                 <h4>
                     <b>Workshop title</b>
                 </h4>
@@ -44,10 +45,10 @@
                     The location and workshop hosts will be displayed in a different text area.
                 </p>
                 <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Lokaal: Aula</p>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: Aula</p>
             </div>
 
-            <div class="grid-item">
+            <div class="rooster-item">
                 <h4>
                     <b>Pizza's bakken</b>
                 </h4>
@@ -57,10 +58,10 @@
                     Er wordt wel een bijdrage van 5 euro verwacht.
                 </p>
                 <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Lokaal: Zorg keuken</p>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: Zorg keuken</p>
             </div>
 
-            <div class="grid-item">
+            <div class="rooster-item">
                 <h4>
                     <b>Leeg uur</b>
                 </h4>
@@ -68,10 +69,10 @@
                     Voor dit uur heb je nog niks gekozen.
                 </p>
                 <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Lokaal: -</p>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="grid-item">
+            <div class="rooster-item">
                 <h4>
                     <b>Jacht op de PZ-Schat</b>
                 </h4>
@@ -79,10 +80,10 @@
                     Meldt je bij de receptie voor alle informatie die je nodig hebt.
                 </p>
                 <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Lokaal: Receptie</p>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: Receptie</p>
             </div>
 
-            <div class="grid-item">
+            <div class="rooster-item">
                 <h4>
                     <b>Leeg uur</b>
                 </h4>
@@ -90,10 +91,10 @@
                     Voor dit uur heb je nog niks gekozen.
                 </p>
                 <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Lokaal: -</p>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="grid-item">
+            <div class="rooster-item">
                 <h4>
                     <b>Leeg uur</b>
                 </h4>
@@ -101,7 +102,67 @@
                     Voor dit uur heb je nog niks gekozen.
                 </p>
                 <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Lokaal: -</p>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <!-- Edit this to fetch entries from DB with the workshops that have the most participants -->
+            <h2>Populaire workshops</h2>
+            <div class="popular-container">
+                <div class="popular-item">
+                    <h4>
+                        <b>Chinees schrijven</b>
+                    </h4>
+                    <p>
+                        VLeer in 50 minuten de basis van het Chinees!
+                        Les wordt gegeven door oud-leerling van de PZ.
+                    </p>
+                    <button style="display:inline;">Informatie</button>
+                    <p style="display:inline;float:right;font-size:smaller;">Loc: 346</p>
+                </div>
+    
+                <div class="popular-item">
+                    <h4>
+                        <b>Lasergamen</b>
+                    </h4>
+                    <p>
+                        Heb jij zin in een uitdaging? Vandaag kun je 2 uur lang lasergamen!
+                        Versla de tegenstander en maak kans op een leuk prijsje.
+                    </p>
+                    <button style="display:inline;">Informatie</button>
+                    <p style="display:inline;float:right;font-size:smaller;">Loc: Gang van 433</p>
+                </div>
+
+                <div class="popular-item">
+                    <h4>
+                        <b>Appelflappen maken</b>
+                    </h4>
+                    <p>
+                        Neem je een bijdrage van 3 euro mee voor de onkosten?
+                    </p>
+                    <button style="display:inline;">Informatie</button>
+                    <p style="display:inline;float:right;font-size:smaller;">Loc: Gang van 433</p>
+                </div>
+
+                <div class="popular-item">
+                    <h4>
+                        <b>Template</b>
+                    </h4>
+                    <p>
+                        Empty
+                    </p>
+                    <button style="display:inline;">Informatie</button>
+                    <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="information">
+                <h1>Placeholder - not sure what to put here yet.</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, nihil? Harum nulla, voluptatem voluptas voluptate commodi possimus consequuntur amet at ea, tempora sint, veritatis id asperiores minima blanditiis iure voluptatibus.</p>
             </div>
         </div>
     </div>
