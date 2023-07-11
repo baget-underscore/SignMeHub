@@ -33,11 +33,14 @@ button:hover {
     border-bottom: 4px solid rgb(204, 209, 209);
 }
 button.logout:hover {
-    background-color: lightcoral;
+    border-bottom: 4px solid red;
 }
 
 div.login {
     background-color: rgb(204, 209, 209);
+    margin: auto;
+    padding: 20px;
+    max-width: 300px;
 }
 p.login {
     color: black;
