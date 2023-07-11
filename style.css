@@ -6,8 +6,27 @@ body {
     background-color: whitesmoke;
 }
 
+div.login {
+    margin: auto;
+    padding: 20px;
+    max-width: 300px;
+}
+input.login {
+    color: rgb(168, 168, 168);
+    background-color: whitesmoke;
+    border: 0px solid whitesmoke;
+    border-bottom: 1px solid black;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+input.login:focus {
+    color: black;
+    background-color: lightgray;
+    outline: none;
+}
+
 div.title {
-    background-color: rgb(204, 209, 209);
+    background-color: lightgray;
     border: 1px solid lightgray;
     margin: 10px 10px;
 }
@@ -24,36 +43,41 @@ nav {
 }
 
 button {
+    cursor: pointer;
     background-color: whitesmoke;
-    border: 0px solid rgb(204, 209, 209);
+    border: 0px solid lightgray;
     padding: 9px 16px;
     transition: 0.1s;
 }
-button.currentPage {
-    border-bottom: 4px solid rgb(204, 209, 209);
-}
 button:hover {
-    border-bottom: 4px solid rgb(204, 209, 209);
+    border-bottom: 4px solid gray;
+}
+button:disabled {
+    cursor: not-allowed;
+    color: grey;
+    border-bottom: 4px solid lightgray;
 }
 button.logout:hover {
     border-bottom: 4px solid red;
 }
 
-div.login {
-    margin: auto;
-    padding: 20px;
-    max-width: 300px;
+div.listHolder {
+    background-color: yellow;
+    height: 80%;
+    margin: 40px
 }
-input.login {
-    color: rgb(168, 168, 168);
-    background-color: whitesmoke;
-    border: 0px solid whitesmoke;
-    border-bottom: 1px solid black;
-    padding: 5px;
-    margin-bottom: 30px;
+div.listItem {
+    background-color: lightgray;
+    width: 20%;
+    height: 250px;
+    padding: 5px 20px 5px 20px;
+    margin: 10px;
 }
-input.login:focus {
-    color: black;
-    background-color: rgb(204, 209, 209);
-    outline: none;
+div.listItem p {
+    height: 90px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
