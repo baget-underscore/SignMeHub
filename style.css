@@ -61,7 +61,7 @@ button.logout:hover {
     border-bottom: 5px solid red;
 }
 
-.rooster-container {
+.rooster-container, .selectie-container {
     display: grid;
     row-gap: 10px;
     column-gap: 10px;
@@ -69,11 +69,11 @@ button.logout:hover {
     grid-template-columns: auto auto auto auto auto auto;
     grid-auto-rows: 200px;
 }
-.rooster-item, .popular-item {
+.rooster-item, .popular-item, .selectie-item {
     background-color: lightgray;
     padding: 5px 20px 5px 20px;
 }
-.rooster-item p, .popular-item p {
+.rooster-item p, .popular-item p, .selectie-item p {
     height: 65px;
     overflow: hidden;
     display: -webkit-box;

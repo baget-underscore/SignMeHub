@@ -6,9 +6,9 @@
     </title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../js/script.js"></script>
 </head>
 
 <body>
@@ -30,83 +30,129 @@
     <div>
         <h1 style="margin:auto;max-width:fit-content;color:darkred"><b>Work in progress</b></h1>
     </div>
-    <div style="margin:auto;max-width:fit-content">
+    <div style="margin:auto;max-width:fit-content;height: 60px;">
         <a href="testingSignUp.html"><button style="background-color:rgb(204, 209, 209)">Click here to redirect to unfinished page</button></a>
     </div>
 
-    <h2>Jouw rooster:</h2>
+    <div style="margin:10px">
+
         <!-- Edit this to fetch entries from DB using user_id and the workshops they signed up for -->
-        <div class="rooster-container">
-            <div class="rooster-item">
+        <div class="selectie-container">
+            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
-                    <b>Workshop title</b>
+                    <b>-</b>
                 </h4>
                 <p>
-                    This is the description of the workshop! It should end at 4 lines max.
-                    There will be an explanation for the workshop, possible requirements, etc etc.
-                    The location and workshop hosts will be displayed in a different text area.
+                    -
                 </p>
-                <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: Aula</p>
-            </div>
-
-            <div class="rooster-item">
-                <h4>
-                    <b>Pizza's bakken</b>
-                </h4>
-                <p>
-                    In deze workshop gaan jullie een pizzabodem versieren met allerlei lekkere ingredienten.
-                    Daarna moet de pizza nog even in de over en je mag 'm zelf opeten!
-                    Er wordt wel een bijdrage van 5 euro verwacht.
-                </p>
-                <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: Zorg keuken</p>
-            </div>
-
-            <div class="rooster-item">
-                <h4>
-                    <b>Leeg uur</b>
-                </h4>
-                <p>
-                    Voor dit uur heb je nog niks gekozen.
-                </p>
-                <button style="display:inline;">Informatie</button>
+                <button style="display:inline;" disabled>Informatie</button>
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="rooster-item">
+            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
-                    <b>Jacht op de PZ-Schat</b>
+                    <b>-</b>
                 </h4>
                 <p>
-                    Meldt je bij de receptie voor alle informatie die je nodig hebt.
+                    -
                 </p>
-                <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: Receptie</p>
-            </div>
-
-            <div class="rooster-item">
-                <h4>
-                    <b>Leeg uur</b>
-                </h4>
-                <p>
-                    Voor dit uur heb je nog niks gekozen.
-                </p>
-                <button style="display:inline;">Informatie</button>
+                <button style="display:inline;" disabled>Informatie</button>
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="rooster-item">
+            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
-                    <b>Leeg uur</b>
+                    <b>-</b>
                 </h4>
                 <p>
-                    Voor dit uur heb je nog niks gekozen.
+                    -
+                </p>
+                <button style="display:inline;" disabled>Informatie</button>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+            </div>
+
+            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h4>
+                    <b>-</b>
+                </h4>
+                <p>
+                    -
+                </p>
+                <button style="display:inline;" disabled>Informatie</button>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+            </div>
+
+            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h4>
+                    <b>-</b>
+                </h4>
+                <p>
+                    -
+                </p>
+                <button style="display:inline;" disabled>Informatie</button>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+            </div>
+
+            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h4>
+                    <b>-</b>
+                </h4>
+                <p>
+                    -
+                </p>
+                <button style="display:inline;" disabled>Informatie</button>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+            </div>
+        </div>
+        <br><br>
+        <div class="popular-container">
+            <div class="popular-item" draggable="true" ondragstart="drag(event)" id="ws1">
+                <h4>
+                    <b>Chinees schrijven</b>
+                </h4>
+                <p>
+                    VLeer in 50 minuten de basis van het Chinees!
+                    Les wordt gegeven door oud-leerling van de PZ.
+                </p>
+                <button style="display:inline;">Informatie</button>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: 346</p>
+            </div>
+
+            <div class="popular-item" draggable="true" ondragstart="drag(event)" id="ws2">
+                <h4>
+                    <b>Lasergamen</b>
+                </h4>
+                <p>
+                    Heb jij zin in een uitdaging? Vandaag kun je 2 uur lang lasergamen!
+                    Versla de tegenstander en maak kans op een leuk prijsje.
+                </p>
+                <button style="display:inline;">Informatie</button>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: Gang van 433</p>
+            </div>
+
+            <div class="popular-item" draggable="true" ondragstart="drag(event)">
+                <h4>
+                    <b>Appelflappen maken</b>
+                </h4>
+                <p>
+                    Neem je een bijdrage van 3 euro mee voor de onkosten?
+                </p>
+                <button style="display:inline;">Informatie</button>
+                <p style="display:inline;float:right;font-size:smaller;">Loc: Gang van 433</p>
+            </div>
+
+            <div class="popular-item" draggable="true" ondragstart="drag(event)">
+                <h4>
+                    <b>Template</b>
+                </h4>
+                <p>
+                    Empty
                 </p>
                 <button style="display:inline;">Informatie</button>
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
         </div>
+    </div>
 </body>
 
 </html>
