@@ -95,7 +95,7 @@ hr.separator {
     font-weight: 700;
 }
 .ws-item button.fa.fa-trash {
-    visibility: hidden;
+    display: none;
     margin-top: 5px;
     float: right;
     background-color: lightgray;
@@ -106,7 +106,7 @@ hr.separator {
     border-bottom: 0px;
 }
 .ws-slotrow button.fa.fa-trash {
-    visibility: visible;
+    display: block;
 }
 .ws-description {
     height: 6em;
@@ -119,4 +119,5 @@ hr.separator {
 .ws-itemrow {
     padding: 3px;
     background: darkgray;
+    height: 39em;
 }
