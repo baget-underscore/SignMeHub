@@ -79,16 +79,44 @@ button.logout:hover {
     max-width: 67%;
 }
 
+hr.separator {
+    height: 2px;
+    border-width: 0;
+    color: gray;
+    background-color: gray;
+}
+
 .ws-item, .ws-slot {
     height: 13em;
     background-color: lightgray;
     border: 1px solid gray;
 }
-
+.ws-slot h4, .ws-item h4 {
+    font-weight: 700;
+}
+.ws-item button.fa.fa-trash {
+    visibility: hidden;
+    margin-top: 5px;
+    float: right;
+    background-color: lightgray;
+    font-size: 26px;
+}
+.ws-item button.fa.fa-trash:hover {
+    color: red;
+    border-bottom: 0px;
+}
+.ws-slotrow button.fa.fa-trash {
+    visibility: visible;
+}
 .ws-description {
     height: 6em;
     overflow-y: auto;
 }
 .ws-description p {
     margin-top: 0;
+}
+
+.ws-itemrow {
+    padding: 3px;
+    background: darkgray;
 }
