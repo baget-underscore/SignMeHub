@@ -6,6 +6,19 @@ body {
     background-color: whitesmoke;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: darkgray;
+}
+::-webkit-scrollbar-thumb {
+    background: gray;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
 div.login {
     margin: auto;
     padding: 20px;
@@ -30,10 +43,7 @@ div.title {
     border: 1px solid lightgray;
     margin: 10px 10px;
 }
-p.title {
-    text-align: center;
-}
-label.title {
+p.title, label.title {
     text-align: center;
 }
 
@@ -61,41 +71,24 @@ button.logout:hover {
     border-bottom: 5px solid red;
 }
 
-.rooster-container, .selectie-container {
-    display: grid;
-    row-gap: 10px;
-    column-gap: 10px;
-    grid-auto-flow: column;
-    grid-template-columns: auto auto auto auto auto auto;
-    grid-auto-rows: 200px;
-}
-.rooster-item, .popular-item, .selectie-item {
-    background-color: lightgray;
-    padding: 5px 20px 5px 20px;
-}
-.rooster-item p, .popular-item p, .selectie-item p {
-    height: 65px;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
-
-.popular-container {
-    float: left;
-    max-width: 33%;
-    display: grid;
-    row-gap: 10px;
-    column-gap: 10px;
-    grid-template-columns: auto auto;
-    grid-auto-rows: 200px;
-}
-
 .information {
     background-color: sandybrown;
     padding: 10px;
     padding-left: 30px;
     float: right;
     max-width: 67%;
+}
+
+.ws-item, .ws-slot {
+    height: 13em;
+    background-color: lightgray;
+    border: 1px solid gray;
+}
+
+.ws-description {
+    height: 6em;
+    overflow-y: auto;
+}
+.ws-description p {
+    margin-top: 0;
 }

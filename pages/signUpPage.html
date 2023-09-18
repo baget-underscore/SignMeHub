@@ -27,18 +27,11 @@
         </nav>
     </div>
 
-    <div>
-        <h1 style="margin:auto;max-width:fit-content;color:darkred"><b>Work in progress</b></h1>
-    </div>
-    <div style="margin:auto;max-width:fit-content;height: 60px;">
-        <a href="testingSignUp.html"><button style="background-color:rgb(204, 209, 209)">Click here to redirect to unfinished page</button></a>
-    </div>
-
     <div style="margin:10px">
 
         <!-- Edit this to fetch entries from DB using user_id and the workshops they signed up for -->
-        <div class="selectie-container">
-            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div class="w3-row-padding">
+            <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
                     <b>-</b>
                 </h4>
@@ -49,7 +42,7 @@
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
                     <b>-</b>
                 </h4>
@@ -60,7 +53,7 @@
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
                     <b>-</b>
                 </h4>
@@ -71,7 +64,7 @@
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
                     <b>-</b>
                 </h4>
@@ -82,7 +75,7 @@
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
                     <b>-</b>
                 </h4>
@@ -93,7 +86,7 @@
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
 
-            <div class="selectie-item" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
                 <h4>
                     <b>-</b>
                 </h4>
@@ -105,49 +98,59 @@
             </div>
         </div>
         <br><br>
-        <div class="popular-container">
-            <div class="popular-item" draggable="true" ondragstart="drag(event)" id="ws1">
+
+        <div class="w3-row-padding">
+            <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws1">
                 <h4>
                     <b>Chinees schrijven</b>
                 </h4>
-                <p>
-                    VLeer in 50 minuten de basis van het Chinees!
-                    Les wordt gegeven door oud-leerling van de PZ.
-                </p>
+                <div class="ws-description">
+                    <p>
+                        Leer in 50 minuten de basis van het Chinees!
+                        Les wordt gegeven door oud-leerling van de PZ.
+                    </p>
+                </div>
+                
                 <button style="display:inline;">Informatie</button>
                 <p style="display:inline;float:right;font-size:smaller;">Loc: 346</p>
             </div>
 
-            <div class="popular-item" draggable="true" ondragstart="drag(event)" id="ws2">
+            <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws2">
                 <h4>
                     <b>Lasergamen</b>
                 </h4>
-                <p>
-                    Heb jij zin in een uitdaging? Vandaag kun je 2 uur lang lasergamen!
-                    Versla de tegenstander en maak kans op een leuk prijsje.
-                </p>
+                <div class="ws-description">
+                    <p>
+                        Heb jij zin in een uitdaging? Vandaag kun je 2 uur lang lasergamen!
+                        Versla de tegenstander en maak kans op een leuk prijsje.
+                    </p>
+                </div>
                 <button style="display:inline;">Informatie</button>
                 <p style="display:inline;float:right;font-size:smaller;">Loc: Gang van 433</p>
             </div>
 
-            <div class="popular-item" draggable="true" ondragstart="drag(event)">
+            <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws3">
                 <h4>
                     <b>Appelflappen maken</b>
                 </h4>
-                <p>
-                    Neem je een bijdrage van 3 euro mee voor de onkosten?
-                </p>
+                <div class="ws-description">
+                    <p>
+                        Neem je een bijdrage van 3 euro mee voor de onkosten?
+                    </p>
+                </div>
                 <button style="display:inline;">Informatie</button>
                 <p style="display:inline;float:right;font-size:smaller;">Loc: Gang van 433</p>
             </div>
 
-            <div class="popular-item" draggable="true" ondragstart="drag(event)">
+            <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws4">
                 <h4>
                     <b>Template</b>
                 </h4>
-                <p>
-                    Empty
-                </p>
+                <div class="ws-description">
+                    <p>
+                        Empty
+                    </p>
+                </div>
                 <button style="display:inline;">Informatie</button>
                 <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
             </div>
