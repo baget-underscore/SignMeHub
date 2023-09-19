@@ -89,23 +89,23 @@ hr.separator {
 .ws-item, .ws-slot {
     height: 13em;
     background-color: lightgray;
-    border: 1px solid gray;
+    border: 1px dashed gray;
 }
 .ws-slot h4, .ws-item h4 {
     font-weight: 700;
 }
-.ws-item button.fa.fa-trash {
+.ws-item button.fa.fa-close {
     display: none;
     margin-top: 5px;
     float: right;
     background-color: lightgray;
     font-size: 26px;
 }
-.ws-item button.fa.fa-trash:hover {
+.ws-item button.fa.fa-close:hover {
     color: red;
     border-bottom: 0px;
 }
-.ws-slotrow button.fa.fa-trash {
+.ws-slotrow button.fa.fa-close {
     display: block;
 }
 .ws-description {
@@ -115,9 +115,16 @@ hr.separator {
 .ws-description p {
     margin-top: 0;
 }
-
+.ws-location {
+    display: inline;
+    font-size: 14px;
+    padding-left: 20px;
+}
 .ws-itemrow {
     padding: 3px;
-    background: darkgray;
+}
+
+.ws-dragarea {
+    outline: dotted 1px black;
     height: 39em;
 }

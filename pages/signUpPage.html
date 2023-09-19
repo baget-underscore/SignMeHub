@@ -29,90 +29,34 @@
 
     <div style="margin:10px">
 
-        <!-- Edit this to fetch entries from DB using user_id and the workshops they signed up for -->
+        <!-- Edit this to fetch entries from DB using user_id and the workshops signed up for -->
         <div class="w3-row-padding ws-slotrow">
             <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h4>
-                    -
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        -
-                    </p>
-                </div>
-                <button style="display:inline;" disabled>Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+                <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-
             <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h4>
-                    -
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        -
-                    </p>
-                </div>
-                <button style="display:inline;" disabled>Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+                <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-
             <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h4>
-                    -
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        -
-                    </p>
-                </div>
-                <button style="display:inline;" disabled>Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+                <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-
             <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h4>
-                    -
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        -
-                    </p>
-                </div>
-                <button style="display:inline;" disabled>Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+                <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-
             <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h4>
-                    -
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        -
-                    </p>
-                </div>
-                <button style="display:inline;" disabled>Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+                <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-
             <div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <h4>
-                    -
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        -
-                    </p>
-                </div>
-                <button style="display:inline;" disabled>Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
+                <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
         </div>
+
         <hr class="separator">
-        <div class="w3-row-padding ws-itemrow">
+
+        <!-- Edit this to fetch ALL workshops, and remove/disable the ones already signed up for -->
+        <div class="w3-row-padding ws-itemrow ws-dragarea">
             <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws1">
-                <button class="fa fa-trash"></button>
+                <button class="fa fa-close" onclick="resetWs(event)"></button>
                 <h4>
                     Chinees schrijven
                 </h4>
@@ -128,7 +72,7 @@
             </div>
 
             <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws2">
-                <button class="fa fa-trash"></button>
+                <button class="fa fa-close" onclick="resetWs(event)"></button>
                 <h4>
                     Lasergamen
                 </h4>
@@ -143,7 +87,7 @@
             </div>
 
             <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws3">
-                <button class="fa fa-trash"></button>
+                <button class="fa fa-close" onclick="resetWs(event)"></button>
                 <h4>
                     Appelflappen maken
                 </h4>
@@ -157,7 +101,7 @@
             </div>
 
             <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws4">
-                <button class="fa fa-trash"></button>
+                <button class="fa fa-close" onclick="resetWs(event)"></button>
                 <h4>
                     Template
                 </h4>
