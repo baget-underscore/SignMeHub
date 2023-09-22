@@ -1,5 +1,5 @@
-module.exports = {
-    workshops: [
+{
+    "workshops": [
         {
             "name": "Workshop titel",
             "description": "Dit is de beschrijving van de workshop! Je kunt er doorheen scrollen als er 4 of meer regels zijn. Er zou een uitleg van de workshop in moeten staan, wat je mee moet nemen, etc. De locatie en de gevers van de workshop staan ergens anders.",
@@ -11,9 +11,9 @@ module.exports = {
             "location": "Zorg keuken"
         },
         {
-            "name": "Leeg uur",
-            "description": "Voor dit uur heb je nog niks gekozen.",
-            "location": "-"
+            "name": "Volleybal",
+            "description": "Neem je gymkleding mee! De winnaar krijgt een kitkat.",
+            "location": "150-151"
         },
         {
             "name": "Jacht op de PZ-Schat",
@@ -21,13 +21,13 @@ module.exports = {
             "location": "Receptie"
         },
         {
-            "name": "Leeg uur",
-            "description": "Voor dit uur heb je nog niks gekozen.",
-            "location": "-"
+            "name": "Hebreeuws",
+            "description": "In 1 uur leren we jou de basis van Hebreeuws. Wie wil dat nou niet?",
+            "location": "346"
         },
         {
-            "name": "Leeg uur",
-            "description": "Voor dit uur heb je nog niks gekozen.",
+            "name": "Cupcakes versieren",
+            "description": "Maak je eigen cupcake, en versier 'm daarna met van alles en nogwat! Deze workshop duurt 2 uur, en we vragen een kleine bijdrage van €3 om de kosten te dekken.",
             "location": "-"
         }
     ]

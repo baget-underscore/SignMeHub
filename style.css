@@ -114,6 +114,9 @@ hr.separator {
 }
 .ws-description p {
     margin-top: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 0;
 }
 .ws-location {
     display: inline;

@@ -54,65 +54,7 @@
         <hr class="separator">
 
         <!-- Edit this to fetch ALL workshops, and remove/disable the ones already signed up for -->
-        <div class="w3-row-padding ws-itemrow ws-dragarea">
-            <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws1">
-                <button class="fa fa-close" onclick="resetWs(event)"></button>
-                <h4>
-                    Chinees schrijven
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        Leer in 50 minuten de basis van het Chinees!
-                        Les wordt gegeven door oud-leerling van de PZ.
-                    </p>
-                </div>
-                
-                <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: 346</p>
-            </div>
-
-            <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws2">
-                <button class="fa fa-close" onclick="resetWs(event)"></button>
-                <h4>
-                    Lasergamen
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        Heb jij zin in een uitdaging? Vandaag kun je 2 uur lang lasergamen!
-                        Versla de tegenstander en maak kans op een leuk prijsje.
-                    </p>
-                </div>
-                <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: Gang van 433</p>
-            </div>
-
-            <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws3">
-                <button class="fa fa-close" onclick="resetWs(event)"></button>
-                <h4>
-                    Appelflappen maken
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        Neem je een bijdrage van 3 euro mee voor de onkosten?
-                    </p>
-                </div>
-                <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: Gang van 433</p>
-            </div>
-
-            <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws4">
-                <button class="fa fa-close" onclick="resetWs(event)"></button>
-                <h4>
-                    Template
-                </h4>
-                <div class="ws-description">
-                    <p>
-                        Empty
-                    </p>
-                </div>
-                <button style="display:inline;">Informatie</button>
-                <p style="display:inline;float:right;font-size:smaller;">Loc: -</p>
-            </div>
+        <div class="w3-row-padding ws-itemrow ws-dragarea" ondrop="drop(event)" ondragover="allowDrop(event)">
         </div>
     </div>
 </body>
