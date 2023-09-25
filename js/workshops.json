@@ -1,34 +1,34 @@
 {
-    "workshops": [
-        {
+    "workshops": {
+        "0": {
             "name": "Workshop titel",
             "description": "Dit is de beschrijving van de workshop! Je kunt er doorheen scrollen als er 4 of meer regels zijn. Er zou een uitleg van de workshop in moeten staan, wat je mee moet nemen, etc. De locatie en de gevers van de workshop staan ergens anders.",
             "location": "Aula"
         },
-        {
+        "1": {
             "name": "Pizza bakken",
             "description": "In deze workshop gaan jullie een pizzabodem versieren met allerlei lekkere ingredienten. Daarna moet de pizza nog even in de over en je mag 'm zelf opeten! Er wordt wel een bijdrage van 5 euro verwacht.",
             "location": "Zorg keuken"
         },
-        {
+        "3": {
             "name": "Volleybal",
             "description": "Neem je gymkleding mee! De winnaar krijgt een kitkat.",
             "location": "150-151"
         },
-        {
+        "4": {
             "name": "Jacht op de PZ-Schat",
             "description": "Meldt je bij de receptie voor alle Info die je nodig hebt.",
             "location": "Receptie"
         },
-        {
+        "5": {
             "name": "Hebreeuws",
             "description": "In 1 uur leren we jou de basis van Hebreeuws. Wie wil dat nou niet?",
             "location": "346"
         },
-        {
+        "7": {
             "name": "Cupcakes versieren",
             "description": "Maak je eigen cupcake, en versier 'm daarna met van alles en nogwat! Deze workshop duurt 2 uur, en we vragen een kleine bijdrage van €3 om de kosten te dekken.",
             "location": "-"
         }
-    ]
+    }
 }
