@@ -1,6 +1,7 @@
 let app = {
     workshops: {},
     currentDrag: -1,
+    choices: {},
 };
 
 function allowDrop(ev) {
@@ -8,21 +9,28 @@ function allowDrop(ev) {
 }
   
 function drag(ev) {
+    console.log(ev);
     ev.dataTransfer.setData("text", ev.target.id);
     app.currentDrag = ev.target.id;
 }
 
 function drop(ev) {
     ev.preventDefault();
-    const data = ev.dataTransfer.getData("text");
+    $draggedItem = $(`#${app.currentDrag}`);
+    
     $slot = $(ev.target).closest('.ws-slot');
-    if ($slot.length > 0) {
-        $slot.replaceWith($(document.getElementById(data)));
+    let draggedItemInSlot = $draggedItem.closest('.ws-slot').length == 1;
+    if ($slot.length > 0 && !draggedItemInSlot) {
+        $slot.replaceWith($draggedItem);
+        app.choices[$slot.attr('id')] = app.currentDrag;
+        console.log(app.choices)
         app.currentDrag = -1;
     }
-    $dragarea = $(ev.target).closest('.ws-dragarea');
-    if ($dragarea.length == 1) {
-        resetWs($(document.getElementById('ws_'+app.currentDrag)));
+    $dragarea = $(ev.target).closest('#intekenOpties');
+    let draggedItemInDragarea = $draggedItem.closest('#intekenOpties').length == 1;
+    if ($dragarea.length == 1 && !draggedItemInDragarea) {
+        resetWs($draggedItem);
+        app.currentDrag = -1;
     }
 }
 
@@ -33,14 +41,14 @@ function resetWs(target) {
             <h4 class="w3-center">Sleep workshop hier</h4>
         </div>`
     );
-    $ws.appendTo('.ws-dragarea');
+    $ws.appendTo('#intekenOpties');
 }
 
 $(document).ready( () => {
     $.getJSON("../js/workshops.json", data => {
         app.workshops = data.workshops;
         $.each(app.workshops, function(key, value) {
-            $('.ws-itemrow').append(`
+            $('#intekenOpties').append(`
             <div class="w3-col l2 m4 s4 ws-item" draggable="true" ondragstart="drag(event)" id="ws_${key}">
                 <button class="fa fa-close" onclick="resetWs(event.target.parentElement)"></button>
                 <h4>${value.name}</h4>
