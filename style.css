@@ -93,6 +93,7 @@ hr.separator {
 }
 .ws-slot h4, .ws-item h4 {
     font-weight: 700;
+    user-select: none;
 }
 .ws-item button.fa.fa-close {
     display: none;
