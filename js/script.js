@@ -4,10 +4,16 @@ let app = {
     choices: {},
 };
 
+const itemSlotHTML = `
+<div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h4 class="w3-center">Sleep workshop hier</h4>
+</div>
+`;
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
-  
+
 function drag(ev) {
     console.log(ev);
     ev.dataTransfer.setData("text", ev.target.id);
@@ -17,15 +23,26 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     $draggedItem = $(`#${app.currentDrag}`);
+    let dragIndex = $draggedItem.index() + 1;
     
     $slot = $(ev.target).closest('.ws-slot');
+    $dragarea = $draggedItem.closest('#intekenRooster');
     let draggedItemInSlot = $draggedItem.closest('.ws-slot').length == 1;
+    let draggedItemFromSlot = $dragarea.length == 1;
     if ($slot.length > 0 && !draggedItemInSlot) {
+        if (draggedItemFromSlot) {
+            $(itemSlotHTML).attr('id', dragIndex).insertAfter($draggedItem);
+            for (choice in app.choices) {
+                if (app.choices[choice] == $draggedItem.attr('id') && +choice !== dragIndex) {
+                    delete app.choices[choice];
+                }
+            }
+        }
         $slot.replaceWith($draggedItem);
         app.choices[$slot.attr('id')] = app.currentDrag;
-        console.log(app.choices)
         app.currentDrag = -1;
     }
+
     $dragarea = $(ev.target).closest('#intekenOpties');
     let draggedItemInDragarea = $draggedItem.closest('#intekenOpties').length == 1;
     if ($dragarea.length == 1 && !draggedItemInDragarea) {
@@ -36,11 +53,7 @@ function drop(ev) {
 
 function resetWs(target) {
     const $ws = $(target);
-    $ws.replaceWith(
-        `<div class="w3-col l2 m4 s4 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <h4 class="w3-center">Sleep workshop hier</h4>
-        </div>`
-    );
+    $ws.replaceWith(itemSlotHTML);
     $ws.appendTo('#intekenOpties');
 }
 
