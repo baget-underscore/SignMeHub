@@ -121,17 +121,17 @@ hr.separator {
     margin-bottom: 0;
 }
 .ws-location {
+    width: 70%;
+    height: 2.5em;
     overflow: hidden;
 }
 .ws-location p {
     font-size: 14px;
+    margin-left: 10px;
     float: right;
-    margin: 0;
-    margin-top: 14px;
-    margin-bottom: 14px;
-    overflow: hidden;
 }
-.ws-location button {
+.ws-item button {
+    float: left;
     display: inline;
 }
 .ws-itemrow {

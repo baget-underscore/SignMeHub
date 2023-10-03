@@ -16,7 +16,7 @@ function allowDrop(ev) {
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-    app.currentDrag = ev.target.id
+    app.currentDrag = ev.target.id;
 
     if (typeof app.currentDrag !== 'string' || !app.currentDrag.startsWith('ws_')) {
         app.currentDrag = -1;
@@ -70,8 +70,8 @@ $(document).ready( () => {
                 <h4>${value.name}</h4>
                 <div class="ws-description"><p>${value.description}</p></div>
                 
+                <button>Info</button>
                 <div class="ws-location">
-                    <button>Info</button>
                     <p>Loc: ${value.location}</p>
                 </div>
             </div>
