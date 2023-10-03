@@ -93,7 +93,8 @@ hr.separator {
 }
 .ws-slot h4, .ws-item h4 {
     font-weight: 700;
-    user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .ws-item button.fa.fa-close {
     display: none;
@@ -120,14 +121,26 @@ hr.separator {
     margin-bottom: 0;
 }
 .ws-location {
-    display: inline;
+    overflow: hidden;
+}
+.ws-location p {
     font-size: 14px;
-    padding-left: 20px;
+    float: right;
+    margin: 0;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+.ws-location button {
+    display: inline;
 }
 .ws-itemrow {
+    max-width: 1200px;
     padding: 3px;
 }
-
+.ws-slotrow {
+    max-width: 1200px;
+}
 .ws-dragarea {
     outline: dotted 1px black;
     height: 39em;
