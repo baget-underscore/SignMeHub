@@ -121,14 +121,19 @@ hr.separator {
     margin-bottom: 0;
 }
 .ws-location {
-    width: 70%;
-    height: 2.5em;
-    overflow: hidden;
+    height: 3.4em;
 }
 .ws-location p {
     font-size: 14px;
     margin-left: 10px;
-    float: right;
+    text-align: right;
+    margin: 5px 0px 0 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 100%;
+}
+.ws-loc-name {
+    white-space: nowrap;
 }
 .ws-item button {
     float: left;

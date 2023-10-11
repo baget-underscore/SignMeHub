@@ -5,7 +5,7 @@ let app = {
 };
 
 const itemSlotHTML = `
-<div class="w3-col l3 m4 s6 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
+<div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
     <h4 class="w3-center">Sleep workshop hier</h4>
 </div>
 `;
@@ -65,14 +65,17 @@ $(document).ready( () => {
         app.workshops = data.workshops;
         $.each(app.workshops, function(key, value) {
             $('#intekenOpties').append(`
-            <div class="w3-col l3 m4 s6 ws-item" draggable="true" ondragstart="drag(event)" id="ws_${key}">
+            <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" id="ws_${key}">
                 <button class="fa fa-close" onclick="resetWs(event.target.parentElement)"></button>
                 <h4>${value.name}</h4>
                 <div class="ws-description"><p>${value.description}</p></div>
                 
                 <button>Info</button>
-                <div class="ws-location">
-                    <p>Loc: ${value.location}</p>
+                <div class="ws-location w3-rest">
+                    <p>
+                    Locatie:
+                    <span class="ws-loc-name">${value.location}</span>
+                    </p>
                 </div>
             </div>
             `);
