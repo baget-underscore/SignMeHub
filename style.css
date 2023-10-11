@@ -61,6 +61,7 @@ button {
 }
 button:hover {
     border-bottom: 5px solid gray;
+    margin-bottom: -5px;
 }
 button:disabled {
     cursor: not-allowed;

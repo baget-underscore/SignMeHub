@@ -66,7 +66,17 @@ $(document).ready( () => {
         $.each(app.workshops, function(key, value) {
             $('#intekenOpties').append(`
             <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" id="ws_${key}">
-                <button class="fa fa-plus" onclick=""></button>
+                <div class="w3-dropdown-hover w3-right">
+                    <button class="fa fa-plus"></button>
+                    <div class="w3-dropdown-content w3-bar-block" style="right:0">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                    </div>
+                </div>
                 <button class="fa fa-close" onclick="resetWs(event.target.parentElement)"></button>
                 <h4>${value.name}</h4>
                 <div class="ws-description"><p>${value.description}</p></div>
