@@ -96,20 +96,31 @@ hr.separator {
     white-space: nowrap;
     overflow: hidden;
 }
-.ws-item button.fa.fa-close {
-    display: none;
+
+.ws-item button.fa {
     margin-top: 5px;
     float: right;
     background-color: lightgray;
     font-size: 26px;
 }
-.ws-item button.fa.fa-close:hover {
+.ws-item button.fa:hover {
     color: red;
     border-bottom: 0px;
+}
+.ws-item button.fa.fa-close {
+    display: none;
 }
 .ws-slotrow button.fa.fa-close {
     display: block;
 }
+
+.ws-item button.fa.fa-plus {
+    display: block;
+}
+.ws-slotrow button.fa.fa-plus {
+    display: none;
+}
+
 .ws-description {
     height: 6em;
     overflow-y: auto;

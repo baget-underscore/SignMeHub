@@ -66,6 +66,7 @@ $(document).ready( () => {
         $.each(app.workshops, function(key, value) {
             $('#intekenOpties').append(`
             <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" id="ws_${key}">
+                <button class="fa fa-plus" onclick=""></button>
                 <button class="fa fa-close" onclick="resetWs(event.target.parentElement)"></button>
                 <h4>${value.name}</h4>
                 <div class="ws-description"><p>${value.description}</p></div>
