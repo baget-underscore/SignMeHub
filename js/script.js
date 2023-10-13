@@ -1,4 +1,5 @@
 let app = {
+    settings: {},
     workshops: {},
     currentDrag: -1,
     choices: {},
@@ -60,28 +61,35 @@ function resetWs(target) {
     $ws.appendTo('#intekenOpties');
 }
 
+function showInfo(target) {
+    console.log(target);
+}
+
+function chooseWorkshop(slot) {
+    console.log(slot);
+}
+
 $(document).ready( () => {
     $.getJSON("../js/workshops.json", data => {
+        app.settings = data.settings;
         app.workshops = data.workshops;
+        let slotButtons = ``;
+        for (let i = 0; i < app.settings.maxSlots; i++) {
+            slotButtons += `<button onclick="chooseWorkshop(this); event.stopPropagation();" id="${i+1}">${i+1}</button>`
+        }
         $.each(app.workshops, function(key, value) {
             $('#intekenOpties').append(`
-            <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" id="ws_${key}">
+            <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${key}">
                 <div class="w3-dropdown-hover w3-right">
                     <button class="fa fa-plus"></button>
-                    <div class="w3-dropdown-content w3-bar-block" style="right:0">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
+                    <div class="w3-dropdown-content" style="right:0; min-width:135px;">
+                        ${slotButtons}
                     </div>
                 </div>
                 <button class="fa fa-close" onclick="resetWs(event.target.parentElement)"></button>
                 <h4>${value.name}</h4>
                 <div class="ws-description"><p>${value.description}</p></div>
                 
-                <button>Info</button>
                 <div class="ws-location w3-rest">
                     <p>
                     Locatie:

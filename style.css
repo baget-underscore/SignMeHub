@@ -61,7 +61,7 @@ button {
 }
 button:hover {
     border-bottom: 5px solid gray;
-    margin-bottom: -5px;
+    padding-bottom: 4px;
 }
 button:disabled {
     cursor: not-allowed;
@@ -98,6 +98,9 @@ hr.separator {
     overflow: hidden;
 }
 
+.ws-item button {
+    display: inline-block;
+}
 .ws-item button.fa {
     margin-top: 5px;
     float: right;
@@ -146,10 +149,6 @@ hr.separator {
 }
 .ws-loc-name {
     white-space: nowrap;
-}
-.ws-item button {
-    float: left;
-    display: inline;
 }
 .ws-itemrow {
     max-width: 1200px;

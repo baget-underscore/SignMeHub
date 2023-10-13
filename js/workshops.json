@@ -1,4 +1,7 @@
 {
+    "settings": {
+        "maxSlots": 6
+    },
     "workshops": {
         "0": {
             "name": "Workshop titel",
