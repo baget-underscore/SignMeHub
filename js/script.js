@@ -55,18 +55,23 @@ function drop(ev) {
     
 function resetWs(target) {
     const $ws = $(target);
-    let dragIndex = $ws.index() + 1;
+    let dragIndex = `slot_${$ws.index() + 1}`;
     delete app.choices[dragIndex];
     $ws.replaceWith($(itemSlotHTML).attr('id', dragIndex));
     $ws.appendTo('#intekenOpties');
 }
 
 function showInfo(target) {
-    console.log(target);
+    // pop-up menu with a close button, displaying info about workshop
+    // get all info from the database
 }
 
-function chooseWorkshop(slot) {
-    console.log(slot);
+function chooseWorkshop(item) {
+    let $sourceItem = $(item).closest('.ws-item');
+    let $targetSlot = $(`#slot_${item.id}`);
+    $targetSlot.replaceWith($sourceItem);
+    console.log(`#slot_${item.id}`);
+    app.choices[item.id] = $sourceItem.attr('id');
 }
 
 $(document).ready( () => {
