@@ -69,9 +69,10 @@ function showInfo(target) {
 function chooseWorkshop(item) {
     let $sourceItem = $(item).closest('.ws-item');
     let $targetSlot = $(`#slot_${item.id}`);
-    $targetSlot.replaceWith($sourceItem);
-    console.log(`#slot_${item.id}`);
-    app.choices[item.id] = $sourceItem.attr('id');
+    let success = $targetSlot.replaceWith($sourceItem);
+    if (success.length > 0) {
+        app.choices[item.id] = $sourceItem.attr('id');
+    }
 }
 
 $(document).ready( () => {
