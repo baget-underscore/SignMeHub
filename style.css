@@ -88,6 +88,7 @@ hr.separator {
 }
 
 .ws-item, .ws-slot {
+    position: relative;
     height: 13em;
     background-color: lightgray;
     border: 1px dashed gray;
@@ -106,6 +107,7 @@ hr.separator {
     float: right;
     background-color: lightgray;
     font-size: 26px;
+    border-bottom: 0px;
 }
 .ws-item button.fa:hover {
     color: red;
@@ -160,4 +162,16 @@ hr.separator {
 .ws-dragarea {
     outline: dotted 1px black;
     height: 39em;
+}
+
+.dd-menu {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.dd-content {
+    display: none;
 }

@@ -66,13 +66,20 @@ function showInfo(target) {
     // get all info from the database
 }
 
-function chooseWorkshop(item) {
-    let $sourceItem = $(item).closest('.ws-item');
-    let $targetSlot = $(`#slot_${item.id}`);
+function chooseWorkshop(button) {
+    let $buttonItem = $(button).closest(".dd-menu").find(".dd-content:first");
+    $buttonItem.css('display', 'none');
+    let $sourceItem = $(button).closest('.ws-item');
+    let $targetSlot = $(`#slot_${button.id}`);
     let success = $targetSlot.replaceWith($sourceItem);
     if (success.length > 0) {
-        app.choices[item.id] = $sourceItem.attr('id');
+        app.choices[button.id] = $sourceItem.attr('id');
     }
+}
+
+function dropdown(button) {
+    let $buttonItem = $(button).closest(".dd-menu").find(".dd-content:first");
+    $buttonItem.css('display', 'block');
 }
 
 $(document).ready( () => {
@@ -81,14 +88,17 @@ $(document).ready( () => {
         app.workshops = data.workshops;
         let slotButtons = ``;
         for (let i = 0; i < app.settings.maxSlots; i++) {
-            slotButtons += `<button onclick="chooseWorkshop(this); event.stopPropagation();" id="${i+1}">${i+1}</button>`
+            slotButtons += `<button onclick="chooseWorkshop(this); event.stopPropagation();" id="${i+1}">${i+1}</button>`;
+            if (i % 3 == 2) {
+                slotButtons += `<br>`;
+            }
         }
         $.each(app.workshops, function(key, value) {
             $('#intekenOpties').append(`
             <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${key}">
-                <div class="w3-dropdown-hover w3-right">
-                    <button class="fa fa-plus"></button>
-                    <div class="w3-dropdown-content" style="right:0; min-width:135px;">
+                <div class="dd-menu">
+                    <button class="fa fa-plus" onclick="dropdown(this)"></button>
+                    <div class="dd-content w3-right">
                         ${slotButtons}
                     </div>
                 </div>
