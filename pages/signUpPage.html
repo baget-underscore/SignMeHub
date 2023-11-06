@@ -32,24 +32,41 @@
 
         <!-- Edit this to fetch entries from DB using user_id and the workshops signed up for -->
         <div class="w3-row-padding w3-content ws-slotrow" id="intekenRooster">
-            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="slot_1">
+            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_1">
                 <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="slot_2">
+            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_2">
                 <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="slot_3">
+            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_3">
                 <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="slot_4">
+            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_4">
                 <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="slot_5">
+            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_5">
                 <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
-            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="slot_6">
+            <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_6">
                 <h4 class="w3-center">Sleep workshop hier</h4>
             </div>
+        </div>
+
+        <div id="modal_id" class="w3-modal w3-animate-opacity">
+            <div class="w3-modal-content w3-card-4">
+                <header class="w3-container w3-teal"> 
+                  <span onclick="document.getElementById('modal_id').style.display='none'" 
+                  class="w3-button w3-large w3-display-topright">&times;</span>
+                  <h2>Modal Header</h2>
+                </header>
+                <div class="w3-container">
+                  <p>Some text..</p>
+                  <p>Some text..</p>
+                </div>
+                <footer class="w3-container w3-teal">
+                  <p>Modal Footer</p>
+                </footer>
+              </div>
         </div>
 
         <hr class="separator">

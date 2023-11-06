@@ -3,6 +3,7 @@ let app = {
     workshops: {},
     currentDrag: -1,
     choices: {},
+    modal: 'modal_id',
 };
 
 const itemSlotHTML = `
@@ -55,13 +56,15 @@ function drop(ev) {
     
 function resetWs(target) {
     const $ws = $(target);
-    let dragIndex = `slot_${$ws.index() + 1}`;
+    let dragIndex = `s_${$ws.index() + 1}`;
     delete app.choices[dragIndex];
     $ws.replaceWith($(itemSlotHTML).attr('id', dragIndex));
     $ws.appendTo('#intekenOpties');
 }
 
 function showInfo(target) {
+    console.log('Showing info for:', target.id);
+    document.getElementById(app.modal).style.display='block'
     // pop-up menu with a close button, displaying info about workshop
     // get all info from the database
 }
@@ -70,16 +73,22 @@ function chooseWorkshop(button) {
     let $buttonItem = $(button).closest(".dd-menu").find(".dd-content:first");
     $buttonItem.css('display', 'none');
     let $sourceItem = $(button).closest('.ws-item');
-    let $targetSlot = $(`#slot_${button.id}`);
+    let $targetSlot = $(`#s_${button.id}`);
     let success = $targetSlot.replaceWith($sourceItem);
     if (success.length > 0) {
-        app.choices[button.id] = $sourceItem.attr('id');
+        app.choices[`s_${button.id}`] = $sourceItem.attr('id');
     }
 }
 
 function dropdown(button) {
     let $buttonItem = $(button).closest(".dd-menu").find(".dd-content:first");
     $buttonItem.css('display', 'block');
+}
+
+window.onclick = function(event) {
+    if (event.target.id == app.modal) {
+        $(`#${app.modal}`).css('display', 'none');
+    }
 }
 
 $(document).ready( () => {
@@ -97,12 +106,12 @@ $(document).ready( () => {
             $('#intekenOpties').append(`
             <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${key}">
                 <div class="dd-menu">
-                    <button class="fa fa-plus" onclick="dropdown(this)"></button>
+                    <button class="fa fa-plus" onclick="dropdown(this); event.stopPropagation();"></button>
+                    <button class="fa fa-close" onclick="resetWs(event.target.parentElement.parentElement); event.stopPropagation();"></button>
                     <div class="dd-content w3-right">
                         ${slotButtons}
                     </div>
                 </div>
-                <button class="fa fa-close" onclick="resetWs(event.target.parentElement)"></button>
                 <h4>${value.name}</h4>
                 <div class="ws-description"><p>${value.description}</p></div>
                 
