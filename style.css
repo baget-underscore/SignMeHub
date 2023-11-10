@@ -175,3 +175,7 @@ hr.separator {
 .dd-content {
     display: none;
 }
+
+.modalinfo {
+    background-color: lightgray;
+}

@@ -52,19 +52,17 @@
             </div>
         </div>
 
-        <div id="modal_id" class="w3-modal w3-animate-opacity">
+        <div id="modal_ws_info" class="w3-modal w3-animate-opacity">
             <div class="w3-modal-content w3-card-4">
-                <header class="w3-container w3-teal"> 
-                  <span onclick="document.getElementById('modal_id').style.display='none'" 
-                  class="w3-button w3-large w3-display-topright">&times;</span>
-                  <h2>Modal Header</h2>
+                <header class="w3-container modalinfo"> 
+                    <h2>Modal Header</h2>
+                    <span onclick="$('#modal_ws_info').hide()" class="w3-button w3-large w3-display-topright">&times;</span>
                 </header>
                 <div class="w3-container">
-                  <p>Some text..</p>
-                  <p>Some text..</p>
+                    <p id="modal_desc">Description</p>
                 </div>
-                <footer class="w3-container w3-teal">
-                  <p>Modal Footer</p>
+                <footer class="w3-container modalinfo">
+                    <p>Modal Footer</p>
                 </footer>
               </div>
         </div>

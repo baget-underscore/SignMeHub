@@ -3,7 +3,6 @@ let app = {
     workshops: {},
     currentDrag: -1,
     choices: {},
-    modal: 'modal_id',
 };
 
 const itemSlotHTML = `
@@ -63,10 +62,11 @@ function resetWs(target) {
 }
 
 function showInfo(target) {
-    console.log('Showing info for:', target.id);
-    document.getElementById(app.modal).style.display='block'
-    // pop-up menu with a close button, displaying info about workshop
-    // get all info from the database
+    $('#modal_ws_info h2').text($(target).find('h4').text());
+    $('#modal_ws_info div p').text($(target).find('div p:first').text());
+    $('#modal_ws_info footer p').text('Locatie: ' +  $(target).find('div span').text());
+    $('#modal_ws_info').show();
+    // get all info from the database / ws description
 }
 
 function chooseWorkshop(button) {
@@ -86,8 +86,8 @@ function dropdown(button) {
 }
 
 window.onclick = function(event) {
-    if (event.target.id == app.modal) {
-        $(`#${app.modal}`).css('display', 'none');
+    if (event.target.id == 'modal_ws_info') {
+        $(`#modal_ws_info`).hide();
     }
 }
 
