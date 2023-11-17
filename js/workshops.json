@@ -1,6 +1,6 @@
 {
     "settings": {
-        "maxSlots": 6
+        "maxSlots": 2
     },
     "workshops": {
         "0": {
@@ -32,6 +32,21 @@
             "name": "Cupcakes versieren",
             "description": "Maak je eigen cupcake, en versier 'm daarna met van alles en nogwat! Deze workshop duurt 2 uur, en we vragen een kleine bijdrage van €3 om de kosten te dekken.",
             "location": "De grootste keuken bij de PRO"
+        },
+        "8" : {
+            "name": "Apekooien",
+            "description": "Een uur lang rondspringen, terwijl je de grond niet mag aanraken. Als je getikt wordt ben je af, maar de laatste die overblijft krijgt een slagroomtaart! Wie wil dat nou niet?",
+            "location": "151/152"
+        },
+        "11" : {
+            "name": "Lasergamen",
+            "description": "Heb jij zin in een uitdaging? Vandaag kun je 2 uur lang lasergamen! Versla de tegenstander en maak kans op een leuk prijsje.",
+            "location": "Gang van 433"
+        },
+        "13" : {
+            "name": "Romeinse rijk",
+            "description": "Hoe vaak denk jíj aan het Romeinse rijk?? In je dromen, overdag, als je slaapwandelt",
+            "location": "Rome"
         }
     }
 }

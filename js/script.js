@@ -1,15 +1,10 @@
 let app = {
     settings: {},
     workshops: {},
-    currentDrag: -1,
     choices: {},
+    currentDrag: -1,
+    slotID: -1,
 };
-
-const itemSlotHTML = `
-<div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)">
-    <h4 class="w3-center">Sleep workshop hier</h4>
-</div>
-`;
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -32,6 +27,12 @@ function drop(ev) {
         $slot = $(ev.target).closest('.ws-slot');
         let dragIndex = $draggedItem.index() + 1;
         let targetIndex = $slot.attr('id');
+
+        let itemSlotHTML = `
+        <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id=s_${app.slotID}>
+            <h4 class="w3-center">${app.slotID}</h4>
+        </div>
+        `;
         
         let draggedItemInSlot = $draggedItem.closest('.ws-slot').length == 1;
         let draggedItemFromSlot = $dragarea.length == 1;
@@ -50,6 +51,7 @@ function drop(ev) {
             resetWs($draggedItem);
         }
         app.currentDrag = -1;
+        app.slotID = -1;
     }
 }
     
@@ -96,12 +98,17 @@ $(document).ready( () => {
         app.settings = data.settings;
         app.workshops = data.workshops;
         let slotButtons = ``;
+        let slots = ``;
         for (let i = 0; i < app.settings.maxSlots; i++) {
+            slots += `<div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_${i+1}">
+            <h4 class="w3-center">${i+1}</h4></div>`
             slotButtons += `<button onclick="chooseWorkshop(this); event.stopPropagation();" id="${i+1}">${i+1}</button>`;
             if (i % 3 == 2) {
                 slotButtons += `<br>`;
             }
         }
+        console.log($('#intekenRooster'))
+        $('#intekenRooster').append(slots);
         $.each(app.workshops, function(key, value) {
             $('#intekenOpties').append(`
             <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${key}">
