@@ -15,6 +15,7 @@ function checkAvailable() {
     else {
         $('.fa.fa-plus').prop('disabled', false);
     }
+    
     Object.keys(app.choices).forEach((wsKey) => {
         console.log(wsKey.slice(2));
         console.log($(`#${wsKey.slice(2)}`));
