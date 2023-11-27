@@ -113,6 +113,10 @@ hr.separator {
     color: red;
     border-bottom: 0px;
 }
+.ws-item button.fa:disabled:hover {
+    color: gray;
+    border-bottom: 0px;
+}
 .ws-item button.fa.fa-close {
     display: none;
 }

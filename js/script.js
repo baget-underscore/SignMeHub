@@ -1,10 +1,30 @@
 let app = {
-    settings: {},
+    settings: {
+        maxSlots: -1,
+    },
     workshops: {},
     choices: {},
     currentDrag: -1,
     slotID: -1,
 };
+
+function checkAvailable() {
+    if (Object.keys(app.choices).length >= app.settings.maxSlots) {
+        $('.fa.fa-plus').prop('disabled', true);
+    }
+    else {
+        $('.fa.fa-plus').prop('disabled', false);
+    }
+    Object.keys(app.choices).forEach((wsKey) => {
+        console.log(wsKey.slice(2));
+        console.log($(`#${wsKey.slice(2)}`));
+        $(`#${wsKey.slice(2)}`).prop('disabled', true);
+    })
+}
+
+function getKeyByValue(object, value) {
+    return Object.keys(object).find(key => object[key] === value);
+}
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -27,10 +47,10 @@ function drop(ev) {
         $slot = $(ev.target).closest('.ws-slot');
         let dragIndex = $draggedItem.index() + 1;
         let targetIndex = $slot.attr('id');
-
+        
         let itemSlotHTML = `
         <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id=s_${app.slotID}>
-            <h4 class="w3-center">${app.slotID}</h4>
+        <h4 class="w3-center">${app.slotID}</h4>
         </div>
         `;
         
@@ -50,17 +70,26 @@ function drop(ev) {
         if ($dragarea.length == 1 && !draggedItemInDragarea) {
             resetWs($draggedItem);
         }
+        checkAvailable();
         app.currentDrag = -1;
-        app.slotID = -1;
     }
 }
-    
+
 function resetWs(target) {
     const $ws = $(target);
+    app.slotID = getKeyByValue(app.choices, $ws.attr('id')).slice(2);
+    console.log(app.slotID);
     let dragIndex = `s_${$ws.index() + 1}`;
+    let itemSlotHTML = `
+    <div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id=s_${app.slotID}>
+    <h4 class="w3-center">${app.slotID}</h4>
+    </div>
+    `;
     delete app.choices[dragIndex];
     $ws.replaceWith($(itemSlotHTML).attr('id', dragIndex));
     $ws.appendTo('#intekenOpties');
+    checkAvailable();
+    app.slotID = -1;
 }
 
 function showInfo(target) {
@@ -80,11 +109,15 @@ function chooseWorkshop(button) {
     if (success.length > 0) {
         app.choices[`s_${button.id}`] = $sourceItem.attr('id');
     }
+    checkAvailable();
 }
 
 function dropdown(button) {
-    let $buttonItem = $(button).closest(".dd-menu").find(".dd-content:first");
-    $buttonItem.css('display', 'block');
+    if (!(Object.keys(app.choices).length >= app.settings.maxSlots)) {
+        let $buttonItem = $(button).closest(".dd-menu").find(".dd-content:first");
+        $buttonItem.css('display', 'block');
+        // $buttonItem.children().attr('disabled', true);
+    }
 }
 
 window.onclick = function(event) {
