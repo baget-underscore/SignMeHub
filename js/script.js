@@ -128,6 +128,17 @@ window.onclick = function(event) {
 }
 
 $(document).ready( () => {
+    $.ajax({
+        type: "GET",
+        url: "script.php",
+        data: "workshops",
+        datatye: "json",
+        cache: false,
+        success: function(data) {
+            alert("data: " + data);
+        }
+    })
+
     $.getJSON("../js/workshops.json", data => {
         app.settings = data.settings;
         app.workshops = data.workshops;
