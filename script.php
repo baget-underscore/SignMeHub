@@ -16,7 +16,8 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
   // output
-  echo $result;
+  $row = mysqli_fetch_assoc($result);
+  echo $row["boeknr"];
 } else {
   echo "No results";
 }
