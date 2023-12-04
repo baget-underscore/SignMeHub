@@ -128,17 +128,6 @@ window.onclick = function(event) {
 }
 
 $(document).ready( () => {
-    $.ajax({
-        type: "GET",
-        url: "script.php",
-        data: "workshops",
-        datatye: "json",
-        cache: false,
-        success: function(data) {
-            alert("data: " + data);
-        }
-    })
-
     $.getJSON("../js/workshops.json", data => {
         app.settings = data.settings;
         app.workshops = data.workshops;
@@ -152,9 +141,16 @@ $(document).ready( () => {
                 slotButtons += `<br>`;
             }
         }
-        console.log($('#intekenRooster'))
         $('#intekenRooster').append(slots);
-        $.each(app.workshops, function(key, value) {
+    });
+    i = 0;
+    $.ajax({
+        type: "GET",
+        url: "script.php",
+        data: "workshops",
+        datatye: "json",
+        cache: false,
+        success: function(data) {
             $('#intekenOpties').append(`
             <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${key}">
                 <div class="dd-menu">
@@ -164,18 +160,20 @@ $(document).ready( () => {
                         ${slotButtons}
                     </div>
                 </div>
-                <h4>${value.name}</h4>
-                <div class="ws-description"><p>${value.description}</p></div>
+                <h4>${data[i].name}</h4>
+                <div class="ws-description"><p>${data[i].description}</p></div>
                 
                 <div class="ws-location w3-rest">
                     <p>
                     Locatie:
-                    <span class="ws-loc-name">${value.location}</span>
+                    <span class="ws-loc-name">${data[i].location}</span>
                     </p>
                 </div>
             </div>
-            `);
-        });
-    });
+            `)
+            i++;
+        }
+    })
+
 })
 
