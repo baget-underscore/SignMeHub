@@ -117,7 +117,6 @@ function dropdown(button) {
     if (!(Object.keys(app.choices).length >= app.settings.maxSlots)) {
         let $buttonItem = $(button).closest(".dd-menu").find(".dd-content:first");
         $buttonItem.css('display', 'block');
-        // $buttonItem.children().attr('disabled', true);
     }
 }
 
@@ -142,22 +141,24 @@ $(document).ready( () => {
             }
         }
         $('#intekenRooster').append(slots);
+        app.slotButtons = slotButtons;
     });
     i = 0;
     $.ajax({
         type: "GET",
-        url: "script.php",
-        data: "workshops",
-        datatye: "json",
+        url: "../../script.php",
+        data: "table=boeken",
+        dataType: "json",
         cache: false,
         success: function(data) {
+            console.log(data);
             $('#intekenOpties').append(`
-            <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${key}">
+            <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${data[i].id}">
                 <div class="dd-menu">
                     <button class="fa fa-plus" onclick="dropdown(this); event.stopPropagation();"></button>
                     <button class="fa fa-close" onclick="resetWs(event.target.parentElement.parentElement); event.stopPropagation();"></button>
                     <div class="dd-content w3-right">
-                        ${slotButtons}
+                        ${app.slotButtons}
                     </div>
                 </div>
                 <h4>${data[i].name}</h4>

@@ -11,6 +11,8 @@ if ($conn->connect_error) {
 }
 
 // query
+$data = $_GET['table'];
+echo $data;
 $sql = "SELECT boeknr, titel, genre FROM boeken";
 $result = $conn->query($sql);
 
