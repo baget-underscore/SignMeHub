@@ -127,6 +127,7 @@ window.onclick = function(event) {
 }
 
 $(document).ready( () => {
+    console.log("Reading workshop file");
     $.getJSON("../js/workshops.json", data => {
         app.settings = data.settings;
         app.workshops = data.workshops;
@@ -144,34 +145,35 @@ $(document).ready( () => {
         app.slotButtons = slotButtons;
     });
     i = 0;
+    console.log("Querying database with PHP");
     $.ajax({
         type: "GET",
         url: "../../script.php",
-        data: "table=boeken",
+        data: { table: "boeken" },
         dataType: "json",
         cache: false,
         success: function(data) {
             console.log(data);
-            $('#intekenOpties').append(`
-            <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${data[i].id}">
-                <div class="dd-menu">
-                    <button class="fa fa-plus" onclick="dropdown(this); event.stopPropagation();"></button>
-                    <button class="fa fa-close" onclick="resetWs(event.target.parentElement.parentElement); event.stopPropagation();"></button>
-                    <div class="dd-content w3-right">
-                        ${app.slotButtons}
-                    </div>
-                </div>
-                <h4>${data[i].name}</h4>
-                <div class="ws-description"><p>${data[i].description}</p></div>
+            // $('#intekenOpties').append(`
+            // <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${data[i].id}">
+            //     <div class="dd-menu">
+            //         <button class="fa fa-plus" onclick="dropdown(this); event.stopPropagation();"></button>
+            //         <button class="fa fa-close" onclick="resetWs(event.target.parentElement.parentElement); event.stopPropagation();"></button>
+            //         <div class="dd-content w3-right">
+            //             ${app.slotButtons}
+            //         </div>
+            //     </div>
+            //     <h4>${data[i].name}</h4>
+            //     <div class="ws-description"><p>${data[i].description}</p></div>
                 
-                <div class="ws-location w3-rest">
-                    <p>
-                    Locatie:
-                    <span class="ws-loc-name">${data[i].location}</span>
-                    </p>
-                </div>
-            </div>
-            `)
+            //     <div class="ws-location w3-rest">
+            //         <p>
+            //         Locatie:
+            //         <span class="ws-loc-name">${data[i].location}</span>
+            //         </p>
+            //     </div>
+            // </div>
+            // `)
             i++;
         }
     })
