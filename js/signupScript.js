@@ -127,25 +127,28 @@ window.onclick = function(event) {
 }
 
 $(document).ready( () => {
-    console.log("Reading workshop file");
-    $.getJSON("../js/workshops.json", data => {
-        app.settings = data.settings;
-        app.workshops = data.workshops;
-        let slotButtons = ``;
-        let slots = ``;
-        for (let i = 0; i < app.settings.maxSlots; i++) {
-            slots += `<div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_${i+1}">
-            <h4 class="w3-center">${i+1}</h4></div>`
-            slotButtons += `<button onclick="chooseWorkshop(this); event.stopPropagation();" id="${i+1}">${i+1}</button>`;
-            if (i % 3 == 2) {
-                slotButtons += `<br>`;
+    $.getJSON({
+            url: "../js/workshops.json",
+            dataType: "json",
+            cache: false,
+            succes: function(data) {
+                console.log(data.settings);
+                app.settings = data.settings;
+                app.workshops = data.workshops;
+                let slotButtons = ``;
+                let slots = ``;
+                for (let i = 0; i < app.settings.maxSlots; i++) {
+                    slots += `<div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_${i+1}">
+                    <h4 class="w3-center">${i+1}</h4></div>`
+                    slotButtons += `<button onclick="chooseWorkshop(this); event.stopPropagation();" id="${i+1}">${i+1}</button>`;
+                    if (i % 3 == 2) {
+                        slotButtons += `<br>`;
+                    }
+                }
+                $('#intekenRooster').append(slots);
+                app.slotButtons = slotButtons;
             }
-        }
-        $('#intekenRooster').append(slots);
-        app.slotButtons = slotButtons;
     });
-    i = 0;
-    console.log("Querying database with PHP");
     $.ajax({
         type: "GET",
         url: "../../script.php",
@@ -153,28 +156,28 @@ $(document).ready( () => {
         dataType: "json",
         cache: false,
         success: function(data) {
-            console.log(data);
-            // $('#intekenOpties').append(`
-            // <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${data[i].id}">
-            //     <div class="dd-menu">
-            //         <button class="fa fa-plus" onclick="dropdown(this); event.stopPropagation();"></button>
-            //         <button class="fa fa-close" onclick="resetWs(event.target.parentElement.parentElement); event.stopPropagation();"></button>
-            //         <div class="dd-content w3-right">
-            //             ${app.slotButtons}
-            //         </div>
-            //     </div>
-            //     <h4>${data[i].name}</h4>
-            //     <div class="ws-description"><p>${data[i].description}</p></div>
-                
-            //     <div class="ws-location w3-rest">
-            //         <p>
-            //         Locatie:
-            //         <span class="ws-loc-name">${data[i].location}</span>
-            //         </p>
-            //     </div>
-            // </div>
-            // `)
-            i++;
+            for (const dbItem of data) {
+                $('#intekenOpties').append(`
+                <div class="w3-col l3 m4 s12 ws-item" draggable="true" ondragstart="drag(event)" onclick="showInfo(this)" id="ws_${dbItem.id}">
+                    <div class="dd-menu">
+                        <button class="fa fa-plus" onclick="dropdown(this); event.stopPropagation();"></button>
+                        <button class="fa fa-close" onclick="resetWs(event.target.parentElement.parentElement); event.stopPropagation();"></button>
+                        <div class="dd-content w3-right">
+                            ${app.slotButtons}
+                        </div>
+                    </div>
+                    <h4>${dbItem.title}</h4>
+                    <div class="ws-description"><p>${dbItem.description}</p></div>
+                    
+                    <div class="ws-location w3-rest">
+                        <p>
+                        Locatie:
+                        <span class="ws-loc-name">${dbItem.location}</span>
+                        </p>
+                    </div>
+                </div>
+                `)
+            }
         }
     })
 
