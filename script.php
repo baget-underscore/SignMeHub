@@ -1,18 +1,19 @@
 <?php
-$servername = "localhost";
+$servername = "172.16.120.85";
+$port = "3307";
 $username = "root";
 $password = "usbw";
-$dbname = "bibliotheek";
+$dbname = "signmehub";
 $output = array();
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname, $port);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 // query
 $data = $_GET['table'];
-$sql = "SELECT boeknr, titel, genre, rubriek FROM {$data}";
+$sql = "SELECT workshop, workshop_naam, beschrijving, locatie FROM {$data}";
 $result = $conn->query($sql);
 
 if ($result) {
@@ -20,10 +21,10 @@ if ($result) {
         // output data of each row
             while($row = mysqli_fetch_assoc($result)) {
                 $output[] = [
-                    "id" => $row["boeknr"],
-                    "title" => $row["titel"],
-                    "description" => $row["genre"],
-                    "location" => $row["rubriek"],
+                    "id" => $row["workshop"],
+                    "title" => $row["workshop_naam"],
+                    "description" => $row["beschrijving"],
+                    "location" => $row["locatie"],
                 ];
             }
             echo json_encode($output);

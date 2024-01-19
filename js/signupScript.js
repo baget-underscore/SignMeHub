@@ -127,32 +127,29 @@ window.onclick = function(event) {
 }
 
 $(document).ready( () => {
-    $.getJSON({
-            url: "../js/workshops.json",
-            dataType: "json",
-            cache: false,
-            succes: function(data) {
-                console.log(data.settings);
-                app.settings = data.settings;
-                app.workshops = data.workshops;
-                let slotButtons = ``;
-                let slots = ``;
-                for (let i = 0; i < app.settings.maxSlots; i++) {
-                    slots += `<div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_${i+1}">
-                    <h4 class="w3-center">${i+1}</h4></div>`
-                    slotButtons += `<button onclick="chooseWorkshop(this); event.stopPropagation();" id="${i+1}">${i+1}</button>`;
-                    if (i % 3 == 2) {
-                        slotButtons += `<br>`;
-                    }
+    $.getJSON(
+        "/js/workshops.json",
+        function(data) {
+            app.settings = data.settings;
+            app.workshops = data.workshops;
+            let slotButtons = ``;
+            let slots = ``;
+            for (let i = 0; i < app.settings.maxSlots; i++) {
+                slots += `<div class="w3-col l3 m4 s12 ws-slot" ondrop="drop(event)" ondragover="allowDrop(event)" id="s_${i+1}">
+                        <h4 class="w3-center">${i+1}</h4></div>`
+                slotButtons += `<button onclick="chooseWorkshop(this); event.stopPropagation();" id="${i+1}">${i+1}</button>`;
+                if (i % 3 == 2) {
+                    slotButtons += `<br>`;
                 }
-                $('#intekenRooster').append(slots);
-                app.slotButtons = slotButtons;
             }
-    });
+            $('#intekenRooster').append(slots);
+            app.slotButtons = slotButtons;
+        }
+    );
     $.ajax({
         type: "GET",
         url: "../../script.php",
-        data: { table: "boeken" },
+        data: { table: "workshops" },
         dataType: "json",
         cache: false,
         success: function(data) {
@@ -182,4 +179,3 @@ $(document).ready( () => {
     })
 
 })
-
