@@ -34,5 +34,3 @@ if ($result) {
 }
 $conn->close();
 ?>
-
-frames per second niet minute

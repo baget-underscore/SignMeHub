@@ -67,6 +67,7 @@ button:disabled {
     cursor: not-allowed;
     color: grey;
     border-bottom: 5px solid lightgray;
+    padding-bottom: 4px;
 }
 button.logout:hover {
     border-bottom: 5px solid red;
