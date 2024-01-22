@@ -148,7 +148,7 @@ $(document).ready( () => {
     );
     $.ajax({
         type: "GET",
-        url: "../../script.php",
+        url: "../../php/ws_script.php",
         data: { table: "workshops" },
         dataType: "json",
         cache: false,
