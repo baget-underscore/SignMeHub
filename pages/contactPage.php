@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['acc'])) { 
+} else {
+    header("location:../index.php");
+}
+?>
 <!DOCTYPE html>
 
 <head>
@@ -19,10 +26,11 @@
         </div>
 
         <nav>
-            <a href="dashboardPage.html"><button>Dashboard</button></a>
-            <a href="signUpPage.html"><button>Intekenen</button></a>
-            <a href="contactPage.html"><button disabled>Contact</button></a>
-            <a href="index.html"><button class="logout">Uitloggen</button></a>
+            <a href="dashboardPage.php"><button>Dashboard</button></a>
+            <a href="signUpPage.php"><button>Intekenen</button></a>
+            <a href="contactPage.php"><button disabled>Contact</button></a>
+            <a href="adminPage.php"><button style="display:<?php echo ($_SESSION['acc']['rol'] == 'admin' || $_SESSION['acc']['rol'] == 'beheerder') ? 'block' : 'none' ?>;">Admin</button></a>
+            <a href="../php/logout.php"><button class="logout">Uitloggen</button></a>
         </nav>
     </div>
 
@@ -31,7 +39,7 @@
                 alt="StrongMedia" class="w3-image" style="margin:auto" width="50%">
     </div>
 
-    <div class="w3-panel w3-margin w3-center" style="margin:auto;max-width: fit-content;max-height: fit-content">
+    <div class="w3-panel w3-margin w3-center">
         Developed by StrongMedia
         <br>
         Contact us at 

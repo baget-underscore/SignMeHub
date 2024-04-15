@@ -43,6 +43,9 @@ div.title {
     border: 1px solid lightgray;
     margin: 10px 10px;
 }
+div.red {
+    background-color: lightcoral;
+}
 p.title, label.title {
     text-align: center;
 }
@@ -118,11 +121,15 @@ hr.separator {
     color: gray;
     border-bottom: 0px;
 }
+
 .ws-item button.fa.fa-close {
     display: none;
 }
-.ws-slotrow button.fa.fa-close {
+.ws-slotrow button.fa.fa-close.false {
     display: block;
+}
+.ws-slotrow button.fa.fa-close.true {
+    display: none;
 }
 
 .ws-item button.fa.fa-plus {
@@ -142,45 +149,42 @@ hr.separator {
     margin-right: 5px;
     margin-bottom: 0;
 }
-.ws-location {
+.ws-more-info {
     height: 3.4em;
 }
-.ws-location p {
-    font-size: 14px;
+.ws-more-info {
     margin-left: 10px;
-    text-align: right;
-    margin: 5px 0px 0 10px;
     text-overflow: ellipsis;
     overflow: hidden;
-    height: 100%;
+    display: flex;
+    justify-content: space-between;
 }
+
 .ws-loc-name {
+    flex-basis: 75%;
     white-space: nowrap;
+}
+
+.ws-max-name {
+    flex-basis: 25%;
+    white-space: nowrap;
+}
+.ws-item div p.ws-max-name {
+    display: none;
+}
+.ws-slotrow div p.ws-max-name {
+    display: block;
+}
+
+.ws-slotrow {
+    max-width: 1200px;
+    padding: 3px;
 }
 .ws-itemrow {
     max-width: 1200px;
     padding: 3px;
 }
-.ws-slotrow {
-    max-width: 1200px;
-}
 .ws-dragarea {
     outline: dotted 1px black;
     height: 39em;
-}
-
-.dd-menu {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-
-.dd-content {
-    display: none;
-}
-
-.modalinfo {
-    background-color: lightgray;
 }
