@@ -1,0 +1,12 @@
+- Admin page veranderen:
+    - Workshop toevoegen, aanpassen, verwijderen
+    - Workshop gevers toevoegen, verwijderen
+    - Workshop optie aanmaken, verwijderen
+    - Workshop lengte aanpassen??? tot nu toe 0 functionaliteit
+    - Gebr acc toevoegen, aanpassen, verwijderen
+    - Groep toevoegen, gebr toewijzen aan groep, toegang beheren
+    - Opties maken, aanpassen, verwijderen, openzetten
+- Workshop moet geselect kunnen worden met klikken ipv slepen
+- Workshop moet aantal ingeschreven gebr laten zien
++ Workshop moet geblokt worden als max aantal is ingeschreven
+- Slot laat start/eindtijd zien
